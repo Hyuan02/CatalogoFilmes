@@ -1,0 +1,15 @@
+<p>
+  test works!
+</p>
+<div>
+  <p>Busque aqui seu filme: </p>
+  <form #movieForm="ngForm">
+      <input type="text" name="filme" id="filme" [ngModel]="filme"
+      (ngModelChange)="filme=$event">
+  </form>
+  <p>{{filme}}</p>
+</div>
+
+<div id="conteudoFilmes">
+    
+</div>
