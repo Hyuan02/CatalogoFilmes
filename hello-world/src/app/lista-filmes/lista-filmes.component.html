@@ -1,8 +1,20 @@
-<div *ngIf="isLoaded">
-    <ul>
-      <li *ngFor = "let movie of objeto.results">
-        {{movie.original_title}}
-        <img [src]="config.images.base_url + config.images.poster_sizes[0] + movie.poster_path" alt="">
-      </li>
-    </ul>
+<div class="row">
+    <div *ngIf="isLoaded">
+        <div class="card col-md-2 col-lg-2 col-sm-6 col-xs-5" style="display:inline-block" *ngFor = "let movie of objeto.results" (click)="obterDetalhesFilme(movie)">
+            <img [src]="config.images.base_url + config.images.poster_sizes[0] + movie.poster_path" alt="">
+            <div class="card-body">
+              <h5 class="card-title">{{movie.original_title}}</h5>
+            </div>
+        </div>
+        <!-- <ul>
+          <li *ngFor = "let movie of objeto.results" (click)="obterDetalhesFilme(movie)">
+            {{movie.original_title}}
+            <img [src]="config.images.base_url + config.images.poster_sizes[0] + movie.poster_path" alt="">
+          </li>
+        </ul> -->
+    </div>
 </div>
+
+
+
+<div></div>

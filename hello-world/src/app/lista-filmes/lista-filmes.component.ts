@@ -57,4 +57,9 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
     }
   }
 
+
+  obterDetalhesFilme(filme){
+    console.log(filme);
+  }
+
 }
