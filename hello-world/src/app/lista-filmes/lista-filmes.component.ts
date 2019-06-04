@@ -11,7 +11,8 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
   public objeto = {};
   public config = {};
   public isLoaded = false;
-  @Input() public generoEscolhido;  
+  @Input('generoEscolhido') public generoEscolhido;
+  @Input('filmeBuscado') public filmeBuscado;  
   constructor(private _moviesService: MoviesService) { }
 
   ngOnInit() {
@@ -31,14 +32,28 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges){
     console.log(changes);
-    if(this.generoEscolhido !== ""){
-      console.log("Mudou genero" + this.generoEscolhido);
+    if(changes.generoEscolhido){
+      if(this.generoEscolhido !== ""){
+        console.log("Mudou genero" + this.generoEscolhido);
       this._moviesService.getGenreMovies(this.generoEscolhido)
         .subscribe(data=>{
           this.objeto = data;
           this.isLoaded = true;
           console.log(this.objeto);
         });
+      }
+    }
+
+    if(changes.filmeBuscado){
+      if(this.filmeBuscado !== ""){
+        console.log("A buscar filme" + this.filmeBuscado);
+        this._moviesService.getDesiredMovie(this.filmeBuscado)
+          .subscribe(data=> {
+            this.objeto = data;
+            this.isLoaded = true;
+            console.log(this.objeto);
+          })
+      }
     }
   }
 
