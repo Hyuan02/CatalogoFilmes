@@ -3,9 +3,12 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+  <h3>
+    {{numeroGenero}}
+  </h3>
   <app-test></app-test>
-  <app-lista-filmes></app-lista-filmes>
-  <app-listageneros></app-listageneros>
+  <app-listageneros (selecionarGenero) = "numeroGenero = $event"></app-listageneros>
+  <app-lista-filmes [generoEscolhido] = "numeroGenero"></app-lista-filmes>
 </div>
 
 

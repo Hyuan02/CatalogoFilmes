@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GenresService } from '../genres.service';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-listageneros',
@@ -8,10 +9,10 @@ import { GenresService } from '../genres.service';
 })
 export class ListagenerosComponent implements OnInit {
 
-  constructor(private _genresService: GenresService) { }
+  constructor(private _moviesService: MoviesService) { }
 
   ngOnInit() {
-    this._genresService.getGenres()
+    this._moviesService.getGenres()
       .subscribe(data => {
         this.objeto = data;
         this.isLoaded = true;
@@ -22,6 +23,15 @@ export class ListagenerosComponent implements OnInit {
     
     public objeto = {};
     public isLoaded = false;
+
+    @Output() public selecionarGenero = new EventEmitter();
+
+    obterFilmesGenero(id_genero) {
+      console.log(id_genero);
+      this.selecionarGenero.emit(id_genero);
+    }
+
+    
   }
 
 

@@ -1,0 +1,9 @@
+.generosLinks{
+    text-decoration: none;
+    display: inline;
+    margin-left: 2em;
+}
+
+.generosLinks a{
+    cursor: pointer;
+}

@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
 import { GenresService } from './genres.service';
 import { ListagenerosComponent } from './listageneros/listageneros.component';
+import { MoviesService } from './movies.service';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { ListagenerosComponent } from './listageneros/listageneros.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [GenresService],
+  providers: [GenresService, MoviesService],
   bootstrap: [AppComponent],
 
   

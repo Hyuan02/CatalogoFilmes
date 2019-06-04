@@ -1,6 +1,6 @@
-<h2>Employee List</h2>
+<h2>Selecione por gênero</h2>
 <div *ngIf = "isLoaded">
   <ul>
-    <li *ngFor = "let genre of objeto.genres">{{genre.name}}</li>
+    <li class = "generosLinks" *ngFor = "let genre of objeto.genres"><a (click)="obterFilmesGenero(genre.id)">{{genre.name}}</a></li>
   </ul>
 </div>
