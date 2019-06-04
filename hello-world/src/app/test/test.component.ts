@@ -23,4 +23,9 @@ export class TestComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick(filmeBuscado) {
+    this.filme = filmeBuscado;
+    console.log(this.filme);
+  }
+
 }

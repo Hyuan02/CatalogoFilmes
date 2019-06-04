@@ -6,12 +6,17 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
+import { GenresService } from './genres.service';
+import { ListagenerosComponent } from './listageneros/listageneros.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    ListaFilmesComponent,
+    ListagenerosComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [GenresService],
   bootstrap: [AppComponent],
 
   

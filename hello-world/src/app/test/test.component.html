@@ -3,13 +3,9 @@
 </p>
 <div>
   <p>Busque aqui seu filme: </p>
-  <form #movieForm="ngForm">
-      <input type="text" name="filme" id="filme" [ngModel]="filme"
-      (ngModelChange)="filme=$event">
+  <form>
+      <input type="text" [(ngModel)]="filme" name="filmeBuscado" #filmeBuscado>
+      <!-- <button (click)="onClick(filmeBuscado.value)">Buscar Filme</button> -->
   </form>
   <p>{{filme}}</p>
-</div>
-
-<div id="conteudoFilmes">
-    
 </div>
