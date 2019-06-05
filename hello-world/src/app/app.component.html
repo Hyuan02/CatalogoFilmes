@@ -1,14 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <h3>
-    <!-- {{numeroGenero}} -->
-    <!-- {{filme}} -->
-  </h3>
-  <busca-filme (buscadorFilme)="filmeBuscado=$event"></busca-filme>
   <app-listageneros (selecionarGenero) = "numeroGenero = $event"></app-listageneros>
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+    <h3>
+      <!-- {{numeroGenero}} -->
+      <!-- {{filme}} -->
+    </h3>
+  <busca-filme (buscadorFilme)="filmeBuscado=$event"></busca-filme>
   <app-lista-filmes [generoEscolhido] = "numeroGenero" [filmeBuscado] = "filmeBuscado"></app-lista-filmes>
 </div>
 

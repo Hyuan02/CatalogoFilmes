@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { MoviesService } from '../movies.service';
-
+import { MatDialog } from '@angular/material';
 @Component({
   selector: 'app-lista-filmes',
   templateUrl: './lista-filmes.component.html',
@@ -13,7 +13,7 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
   public isLoaded = false;
   @Input('generoEscolhido') public generoEscolhido;
   @Input('filmeBuscado') public filmeBuscado;  
-  constructor(private _moviesService: MoviesService) { }
+  constructor(private _moviesService: MoviesService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this._moviesService.getConfig().subscribe(response=>{
@@ -58,8 +58,7 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
   }
 
 
-  obterDetalhesFilme(filme){
+  openDialog(filme){
     console.log(filme);
   }
-
 }

@@ -1,6 +1,6 @@
-<h2>Selecione por gênero</h2>
-<div *ngIf = "isLoaded">
-  <ul>
-    <li class = "generosLinks" *ngFor = "let genre of objeto.genres"><a (click)="obterFilmesGenero(genre.id)">{{genre.name}}</a></li>
-  </ul>
-</div>
+<mat-toolbar color="primary">
+  <div *ngIf = "isLoaded" fxLayout="row" fxLayout.xs = "column" >
+      <a class = "generosLinks" *ngFor = "let genre of objeto.genres" (click)="obterFilmesGenero(genre.id)">{{genre.name}}</a>
+  </div>
+</mat-toolbar>
+

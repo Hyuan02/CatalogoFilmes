@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { GenresService } from '../genres.service';
 import { MoviesService } from '../movies.service';
 
+
 @Component({
   selector: 'app-listageneros',
   templateUrl: './listageneros.component.html',

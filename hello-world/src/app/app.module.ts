@@ -10,6 +10,10 @@ import { GenresService } from './genres.service';
 import { ListagenerosComponent } from './listageneros/listageneros.component';
 import { MoviesService } from './movies.service';
 import { BuscaFilmeComponent } from './busca-filme/busca-filme.component';
+import { FlexLayoutModule} from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule, MatCardModule, MatGridListModule, MatButtonModule, MatInputModule, MatDialogModule} from '@angular/material';
+
 
 
 @NgModule({
@@ -23,7 +27,15 @@ import { BuscaFilmeComponent } from './busca-filme/busca-filme.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [GenresService, MoviesService],
   bootstrap: [AppComponent],
