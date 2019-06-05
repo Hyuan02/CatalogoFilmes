@@ -1,0 +1,14 @@
+<div *ngIf="loaded">
+<h2 mat-dialog-title>
+  {{data.filme.title}}
+</h2>
+
+<mat-dialog-content>
+      <img [src]="config.images.base_url + config.images.poster_sizes[3] + data.filme.poster_path" alt="">
+      <div>
+        <p>
+          {{data.filme.overview}}
+        </p>
+      </div>
+</mat-dialog-content>
+</div>

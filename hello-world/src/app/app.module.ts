@@ -13,6 +13,7 @@ import { BuscaFilmeComponent } from './busca-filme/busca-filme.component';
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatCardModule, MatGridListModule, MatButtonModule, MatInputModule, MatDialogModule} from '@angular/material';
+import { FilmesDetalheComponent } from './filmes-detalhe/filmes-detalhe.component';
 
 
 
@@ -21,7 +22,8 @@ import { MatToolbarModule, MatCardModule, MatGridListModule, MatButtonModule, Ma
     AppComponent,
     ListaFilmesComponent,
     ListagenerosComponent,
-    BuscaFilmeComponent
+    BuscaFilmeComponent,
+    FilmesDetalheComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { MatToolbarModule, MatCardModule, MatGridListModule, MatButtonModule, Ma
   ],
   providers: [GenresService, MoviesService],
   bootstrap: [AppComponent],
+  entryComponents: [FilmesDetalheComponent]
 
   
   

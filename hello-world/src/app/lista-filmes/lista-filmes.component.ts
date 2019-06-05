@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { MatDialog } from '@angular/material';
+import { FilmesDetalheComponent } from '../filmes-detalhe/filmes-detalhe.component';
 @Component({
   selector: 'app-lista-filmes',
   templateUrl: './lista-filmes.component.html',
@@ -58,7 +59,10 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
   }
 
 
-  openDialog(filme){
-    console.log(filme);
+  openDialog(_filme){
+    this.dialog.open(FilmesDetalheComponent, {
+      width: '40%',
+      data:{filme:_filme}
+    });
   }
 }
