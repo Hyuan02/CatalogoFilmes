@@ -7,3 +7,9 @@
 .generosLinks{
     cursor: pointer;
 }
+
+.generosLinks:hover{
+    font-weight:bold;
+    color:indigo;
+    transition: .3s;
+}

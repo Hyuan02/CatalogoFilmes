@@ -9,4 +9,5 @@ export class AppComponent {
   title = 'Catalogo de Filmes';
   public numeroGenero = "";
   public filmeBuscado = "";
+  public opened = false;
 }

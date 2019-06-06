@@ -12,10 +12,18 @@ import { MoviesService } from './movies.service';
 import { BuscaFilmeComponent } from './busca-filme/busca-filme.component';
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatCardModule, MatGridListModule, MatButtonModule, MatInputModule, MatDialogModule} from '@angular/material';
+import { MatToolbarModule, MatCardModule, MatGridListModule, MatButtonModule, MatInputModule, MatDialogModule, MatSidenavModule} from '@angular/material';
 import { FilmesDetalheComponent } from './filmes-detalhe/filmes-detalhe.component';
 
-
+const Material = [ BrowserAnimationsModule,
+  MatToolbarModule,
+  MatCardModule,
+  MatGridListModule,
+  MatButtonModule,
+  MatInputModule,
+  MatDialogModule,
+  MatSidenavModule
+]
 
 @NgModule({
   declarations: [
@@ -31,13 +39,7 @@ import { FilmesDetalheComponent } from './filmes-detalhe/filmes-detalhe.componen
     AppRoutingModule,
     FormsModule,
     FlexLayoutModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatGridListModule,
-    MatButtonModule,
-    MatInputModule,
-    MatDialogModule
+    Material
   ],
   providers: [GenresService, MoviesService],
   bootstrap: [AppComponent],
