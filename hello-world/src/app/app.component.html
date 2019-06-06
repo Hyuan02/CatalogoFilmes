@@ -1,21 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
-  <mat-toolbar class="menu" color="primary" div fxLayout="row" fxLayoutAlign="space-between center">
-      <a (click)="opened = !opened" class="botaoMenu"><i class="material-icons">menu</i></a>
-      <div>
-            <h1>
-                Welcome to {{ title }}!
-            </h1>
-      </div>
-  </mat-toolbar>
-  <mat-sidenav-container>
-      <mat-sidenav [(opened)] = "opened" class="containerMenu">
-          <app-listageneros (selecionarGenero) = "numeroGenero = $event" (click)="opened = false"></app-listageneros>
-      </mat-sidenav>
-      <mat-sidenav-content>
-          <div style="text-align:center">
-            <busca-filme (buscadorFilme)="filmeBuscado=$event"></busca-filme>
-            <app-lista-filmes [generoEscolhido] = "numeroGenero" [filmeBuscado] = "filmeBuscado"></app-lista-filmes>
-          </div>
-      </mat-sidenav-content>
-  </mat-sidenav-container>
+<div [class.altoContraste] = "ativarContraste">
+    <mat-toolbar class="menu" color="primary" div fxLayout="row" fxLayoutAlign="space-between center">
+        <a (click)="opened = !opened" class="botaoMenu"><i class="material-icons">menu</i></a>
+        <a (click)="ativarContraste = !ativarContraste">Ativar</a>
+        <div>
+              <h1>
+                  Welcome to {{ title }}!
+              </h1>
+        </div>
+    </mat-toolbar>
+    <mat-sidenav-container>
+        <mat-sidenav [(opened)] = "opened" class="containerMenu">
+            <app-listageneros (selecionarGenero) = "numeroGenero = $event" (click)="opened = false"></app-listageneros>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div style="text-align:center">
+              <busca-filme (buscadorFilme)="filmeBuscado=$event"></busca-filme>
+              <app-lista-filmes [modoAltoContraste]="ativarContraste" [generoEscolhido] = "numeroGenero" [filmeBuscado] = "filmeBuscado"></app-lista-filmes>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+  
 <router-outlet></router-outlet>

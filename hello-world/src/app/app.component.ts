@@ -10,4 +10,5 @@ export class AppComponent {
   public numeroGenero = "";
   public filmeBuscado = "";
   public opened = false;
+  public ativarContraste = false;
 }

@@ -13,7 +13,8 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
   public config = {};
   public isLoaded = false;
   @Input('generoEscolhido') public generoEscolhido;
-  @Input('filmeBuscado') public filmeBuscado;  
+  @Input('filmeBuscado') public filmeBuscado;
+  @Input('modoAltoContraste') public modoAltoContraste;  
   constructor(private _moviesService: MoviesService, public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -60,9 +61,16 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
 
 
   openDialog(_filme){
+    let classes = '';
+    console.log(this.modoAltoContraste);
+    if(this.modoAltoContraste)
+      classes = 'altoContraste';
+    console.log(classes);
     this.dialog.open(FilmesDetalheComponent, {
       width: '60%',
-      data:{filme:_filme}
+      data:{filme:_filme, altoContraste:this.modoAltoContraste},
+      panelClass: classes
     });
+
   }
 }
