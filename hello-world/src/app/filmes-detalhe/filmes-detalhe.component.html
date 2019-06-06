@@ -1,15 +1,19 @@
 <div *ngIf="loaded">
-<h2 mat-dialog-title>
+<h2 mat-dialog-title fxLayoutAlign = "space-around center">
   {{data.filme.title}}
 </h2>
 
-<mat-dialog-content>
-      <img [src]="config.images.base_url + config.images.poster_sizes[3] + data.filme.poster_path" alt="">
-      <div>
-        <h3>Data de Lançamento: </h3>
-        <p>
-          {{data.filme.release_date | date:"dd/MM/yyyy" }}
-        </p>
+<mat-dialog-content >
+    <div fxLayout.md = "row" fxLayoutAlign.md="space-around start" fxLayout.lg = "row" fxLayoutAlign.lg="space-around start" fxLayoutAlign.sm="space-around center" fxLayoutAlign.xs="space-around center">
+      <img [src]="config.images.base_url + config.images.poster_sizes[3] + data.filme.poster_path" alt="" style="width:40%">
+      <div class="infoExtras">
+          <h3>Data de Lançamento: </h3>
+          <p>
+            {{data.filme.release_date | date:"dd/MM/yyyy" }}
+          </p>
+          <H3>Nota Media</H3>
+          <p>{{data.filme.vote_average}}</p>
+      </div>  
       </div>
       <div>
         <h3>Sinopse: </h3>

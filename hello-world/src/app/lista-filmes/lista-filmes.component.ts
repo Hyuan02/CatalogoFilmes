@@ -61,7 +61,7 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
 
   openDialog(_filme){
     this.dialog.open(FilmesDetalheComponent, {
-      width: '40%',
+      width: '60%',
       data:{filme:_filme}
     });
   }
