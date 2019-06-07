@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div [class.altoContraste] = "ativarContraste">
-    <mat-toolbar class="menu" color="primary" div fxLayout="row" fxLayoutAlign="space-between center">
+    <mat-toolbar class="menu" color="primary" div fxLayout="row" fxLayoutAlign="start center">
         <a (click)="opened = !opened" class="botaoMenu"><i class="material-icons">menu</i></a>
-        <a (click)="ativarContraste = !ativarContraste">Ativar</a>
-        <div>
+        <a (click)="ativarContraste = !ativarContraste" class="botaoMenu"><i class="material-icons">brightness_medium</i></a>
+        <div fxFlexOffset.lg = "35%" fxFlexOffset.md = "30%" fxFlexOffset.sm = "23%" fxFlexOffset.xs = "8%">
               <h1>
-                  Welcome to {{ title }}!
+                  Bem vindo ao {{ title }}!
               </h1>
         </div>
     </mat-toolbar>

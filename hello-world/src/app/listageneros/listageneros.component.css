@@ -13,3 +13,7 @@
     color:indigo;
     transition: .3s;
 }
+
+.altoContraste > .generosLinks:hover{
+    color:magenta;
+}
