@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input, SimpleChanges } from '@angular/core';
 import { GenresService } from '../genres.service';
 import { MoviesService } from '../movies.service';
 
@@ -11,6 +11,8 @@ import { MoviesService } from '../movies.service';
 export class ListagenerosComponent implements OnInit {
 
   constructor(private _moviesService: MoviesService) { }
+  @Input('modoAumentarFonte') public modoAumentarFonte; 
+  @Input('modoDiminuirFonte') public modoDiminuirFonte;
 
   ngOnInit() {
     this._moviesService.getGenres()
@@ -31,6 +33,8 @@ export class ListagenerosComponent implements OnInit {
       console.log(id_genero);
       this.selecionarGenero.emit(id_genero);
     }
+
+    
 
     
   }

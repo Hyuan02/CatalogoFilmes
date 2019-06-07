@@ -2,7 +2,9 @@
 <div [class.altoContraste] = "ativarContraste">
     <mat-toolbar class="menu" color="primary" div fxLayout="row" fxLayoutAlign="start center">
         <a (click)="opened = !opened" class="botaoMenu"><i class="material-icons">menu</i></a>
-        <a (click)="ativarContraste = !ativarContraste" class="botaoMenu"><i class="material-icons">brightness_medium</i></a>
+        <a (click)="ativarContraste = !ativarContraste" class="botaoMenu" [class.ativado] = "ativarContraste"><i class="material-icons">brightness_medium</i></a>
+        <a class="botaoMenu" (click)="ativarAumento=!ativarAumento" [class.ativado] = "ativarAumento">A+</a>
+        <a class="botaoMenu" (click)="ativarReducao=!ativarReducao" [class.ativado] = "ativarReducao">A-</a>
         <div fxFlexOffset.lg = "35%" fxFlexOffset.md = "30%" fxFlexOffset.sm = "23%" fxFlexOffset.xs = "8%">
               <h1>
                   Bem vindo ao {{ title }}!
@@ -11,12 +13,12 @@
     </mat-toolbar>
     <mat-sidenav-container>
         <mat-sidenav [(opened)] = "opened" class="containerMenu">
-            <app-listageneros (selecionarGenero) = "numeroGenero = $event" (click)="opened = false"></app-listageneros>
+            <app-listageneros (selecionarGenero) = "numeroGenero = $event" (click)="opened = false" [modoAumentarFonte] = "ativarAumento" [modoDiminuirFonte] = "ativarReducao"></app-listageneros>
         </mat-sidenav>
         <mat-sidenav-content>
             <div style="text-align:center">
               <busca-filme (buscadorFilme)="filmeBuscado=$event"></busca-filme>
-              <app-lista-filmes [modoAltoContraste]="ativarContraste" [generoEscolhido] = "numeroGenero" [filmeBuscado] = "filmeBuscado"></app-lista-filmes>
+              <app-lista-filmes [modoAltoContraste]="ativarContraste" [generoEscolhido] = "numeroGenero" [filmeBuscado] = "filmeBuscado" [modoAumentarFonte] = "ativarAumento" [modoDiminuirFonte] = "ativarReducao"></app-lista-filmes>
             </div>
         </mat-sidenav-content>
     </mat-sidenav-container>

@@ -5,5 +5,22 @@
 }
 
 .lista-filmes{
-    margin-left: 10%;
+    margin-left: 8%;
+}
+
+.fonteAumentada{
+    font-size: 1.4em;
+}
+
+.aumentaTamanho{
+    width:250px;
+    margin-left:3%;
+}
+
+.fonteMenor{
+    font-size: 0.8em;
+}
+
+.diminuiTamanho{
+    width:150px;
 }

@@ -2,7 +2,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
     overflow-x: hidden;
-    background-color: gray;
+    background-color:#fafafa;
 }
 
 
@@ -12,3 +12,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
     color:white;
 }
 
+.containerMenu{
+    height:80%;
+}
+
+.fonteAumentada{
+    font-size: 4em;
+}

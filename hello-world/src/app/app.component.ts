@@ -11,4 +11,6 @@ export class AppComponent {
   public filmeBuscado = "";
   public opened = false;
   public ativarContraste = false;
+  public ativarAumento = false;
+  public ativarReducao = false;
 }

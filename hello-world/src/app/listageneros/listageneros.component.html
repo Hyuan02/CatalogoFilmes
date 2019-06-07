@@ -1,4 +1,4 @@
- <div *ngIf = "isLoaded" fxLayout="column" fxLayoutAlign="space-between start">
+ <div *ngIf = "isLoaded" fxLayout="column" fxLayoutAlign="space-between start" [class.fonteAumentada] = "modoAumentarFonte" [class.fonteMenor] = "modoDiminuirFonte">
       <a class = "generosLinks" *ngFor = "let genre of objeto.genres" (click)="obterFilmesGenero(genre.id)">{{genre.name}}</a>
   </div>
 

@@ -6,9 +6,19 @@ $alt-primary: mat-palette($mat-pink);
 $alt-accent: mat-palette($mat-grey, 200);
 $alt-theme: mat-dark-theme($alt-primary, $alt-accent);
 
+
 .altoContraste{
     @include angular-material-theme($alt-theme);
+    
 }
+
+
+
+
+
+
+
+
 
 
 

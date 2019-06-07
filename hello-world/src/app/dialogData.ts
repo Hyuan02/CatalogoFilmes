@@ -1,3 +1,5 @@
 export interface DialogData{
-    movie: object
+    movie: object,
+    aumentarFonte: boolean,
+    diminuirFonte: boolean
 }

@@ -12,9 +12,12 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
   public objeto = {};
   public config = {};
   public isLoaded = false;
+  public tamanhoOriginal;
   @Input('generoEscolhido') public generoEscolhido;
   @Input('filmeBuscado') public filmeBuscado;
-  @Input('modoAltoContraste') public modoAltoContraste;  
+  @Input('modoAltoContraste') public modoAltoContraste;
+  @Input('modoAumentarFonte') public modoAumentarFonte;
+  @Input('modoDiminuirFonte') public modoDiminuirFonte;  
   constructor(private _moviesService: MoviesService, public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -24,36 +27,28 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
         .subscribe(data=>{
         this.objeto = data;
         this.isLoaded = true;
-        console.log(this.config);
-        console.log(this.objeto);
-        console.log(this.isLoaded);
       });
     });
     
   }
 
   ngOnChanges(changes: SimpleChanges){
-    console.log(changes);
     if(changes.generoEscolhido){
       if(this.generoEscolhido !== ""){
-        console.log("Mudou genero" + this.generoEscolhido);
       this._moviesService.getGenreMovies(this.generoEscolhido)
         .subscribe(data=>{
           this.objeto = data;
           this.isLoaded = true;
-          console.log(this.objeto);
         });
       }
     }
 
     if(changes.filmeBuscado){
       if(this.filmeBuscado !== ""){
-        console.log("A buscar filme" + this.filmeBuscado);
         this._moviesService.getDesiredMovie(this.filmeBuscado)
           .subscribe(data=> {
             this.objeto = data;
             this.isLoaded = true;
-            console.log(this.objeto);
           })
       }
     }
@@ -62,13 +57,11 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
 
   openDialog(_filme){
     let classes = '';
-    console.log(this.modoAltoContraste);
     if(this.modoAltoContraste)
       classes = 'altoContraste';
-    console.log(classes);
     this.dialog.open(FilmesDetalheComponent, {
       width: '60%',
-      data:{filme:_filme, altoContraste:this.modoAltoContraste},
+      data:{filme:_filme, altoContraste:this.modoAltoContraste, aumentarFonte:this.modoAumentarFonte, diminuirFonte:this.modoDiminuirFonte},
       panelClass: classes
     });
 

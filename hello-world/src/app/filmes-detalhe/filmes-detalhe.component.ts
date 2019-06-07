@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Host, Input } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { DialogData } from '../dialogData';
 import { MoviesService } from '../movies.service';
@@ -14,8 +14,12 @@ export class FilmesDetalheComponent implements OnInit {
 
   public config;
   public loaded = false;
+  public tamanhoOriginal;
+  public modoAumentarFonte = this.data.aumentarFonte;
+  public modoDiminuirFonte = this.data.diminuirFonte;
 
   ngOnInit() {
+    
     this._moviesService.getConfig().subscribe(response =>{
       this.config = response;
       this.loaded = true;
