@@ -1,5 +1,5 @@
 
-<div *ngIf="isLoaded" id="lista-filmes" class="lista-filmes"  fxLayout="row wrap" fxLayoutGap="20px"  fxLayout.xs = "column" fxLayoutAlign.xs="space-around center">
+<div *ngIf="isLoaded" id="lista-filmes" class="lista-filmes"  fxLayout="row wrap" fxLayoutGap="20px"  fxLayout.xs = "column" fxLayoutAlign.xs="space-around center" aria-label="Lista de filmes">
     <mat-card class="card-movie" *ngFor="let movie of objeto.results" (click)="openDialog(movie)" [class.aumentaTamanho] = "modoAumentarFonte" [class.diminuiTamanho] = "modoDiminuirFonte">
         <img mat-card-md-image   [src]="config.images.base_url + config.images.poster_sizes[0] + movie.poster_path" alt="">
         <mat-card-title>
