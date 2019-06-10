@@ -2,7 +2,7 @@
       <mat-form-field>
             <input matInput placeholder="Digite o filme que deseja" type="text" [(ngModel)] = "palavraFilme" (keydown.enter)="buscarFilme()">
       </mat-form-field>
-      <button mat-raised-button color="primary" (click) = "buscarFilme()"><i class="material-icons">search</i></button>
+      <button mat-raised-button color="primary" (click) = "buscarFilme()" aria-label="Buscar um Filme"><i class="material-icons" >search</i></button>
 </div>
   
     <!-- <button (click) = "buscarFilme()">Buscar filme</button>   -->

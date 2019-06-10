@@ -1,9 +1,8 @@
-
 <div *ngIf="isLoaded" id="lista-filmes" class="lista-filmes"  fxLayout="row wrap" fxLayoutGap="20px"  fxLayout.xs = "column" fxLayoutAlign.xs="space-around center" aria-label="Lista de filmes">
-    <mat-card class="card-movie" *ngFor="let movie of objeto.results" (click)="openDialog(movie)" [class.aumentaTamanho] = "modoAumentarFonte" [class.diminuiTamanho] = "modoDiminuirFonte">
-        <img mat-card-md-image   [src]="config.images.base_url + config.images.poster_sizes[0] + movie.poster_path" alt="">
+    <mat-card class="card-movie" *ngFor="let movie of objeto.results" (click)="openDialog(movie)" (keydown.enter) = "openDialog(movie)" [class.aumentaTamanho] = "modoAumentarFonte" [class.diminuiTamanho] = "modoDiminuirFonte" aria-labelledby="tituloFilme" tabindex="0">
+        <img mat-card-md-image   [src]="config.images.base_url + config.images.poster_sizes[0] + movie.poster_path" alt="poster do filme">
         <mat-card-title>
-            <span class="card-title" [class.fonteAumentada] = "modoAumentarFonte" [class.fonteMenor] = "modoDiminuirFonte">{{movie.original_title}}</span>
+            <span id="tituloFilme" class="card-title" [class.fonteAumentada] = "modoAumentarFonte" [class.fonteMenor] = "modoDiminuirFonte" >{{movie.original_title}}</span>
         </mat-card-title>
       </mat-card>
         <!-- <div *ngFor = "let movie of objeto.results" (click)="obterDetalhesFilme(movie)">
