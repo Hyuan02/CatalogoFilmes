@@ -21,6 +21,8 @@ export class ListagenerosComponent implements OnInit {
         this.isLoaded = true;
         console.log(this.isLoaded);
         console.log(this.objeto);
+      }, error=>{
+        alert(error);
       });
       }
     

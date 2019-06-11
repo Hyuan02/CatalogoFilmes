@@ -5,7 +5,7 @@
         <a (click)="ativarContraste = !ativarContraste; textoContraste();" (keydown.enter) = "ativarContraste = !ativarContraste; textoContraste();" class="botaoMenu" [class.ativado] = "ativarContraste" tabindex="0" aria-describedby="descricaoContraste"><i class="material-icons" aria-hidden="true">brightness_medium</i> <span id="descricaoContraste" hidden>{{descricaoContraste}}</span></a>
         <a class="botaoMenu" (click)="ativarAumento= !ativarAumento; textoAumento();" (keydown.enter) = "ativarAumento = !ativarAumento; textoAumento();"  [class.ativado] = "ativarAumento"  tabindex="0" aria-describedby="descricaoAumento">A+ <span id="descricaoAumento" hidden>{{descricaoAumento}}</span></a>
         <a class="botaoMenu" (click)="ativarReducao= !ativarReducao; textoReducao();" (keydown.enter) = "ativarReducao = !ativarReducao; textoReducao(); " [class.ativado] = "ativarReducao" tabindex="0" aria-describedby="descricaoReducao">A- <span id="descricaoReducao" hidden>{{descricaoReducao}}</span></a>
-        <div fxFlexOffset.lg = "35%" fxFlexOffset.md = "30%" fxFlexOffset.sm = "23%" fxFlexOffset.xs = "8%">
+        <div fxFlexOffset.lg = "35%" fxFlexOffset.md = "30%" fxFlexOffset.sm = "23%" fxFlexOffset.xs = "4%">
               <h1>
                   Bem vindo ao {{ title }}!
               </h1>

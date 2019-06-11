@@ -27,6 +27,8 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
         .subscribe(data=>{
         this.objeto = data;
         this.isLoaded = true;
+      }, error=>{
+        alert(error);
       });
     });
     
@@ -38,7 +40,8 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
       this._moviesService.getGenreMovies(this.generoEscolhido)
         .subscribe(data=>{
           this.objeto = data;
-          this.isLoaded = true;
+        }, error=>{
+            alert(error);
         });
       }
     }
@@ -48,7 +51,8 @@ export class ListaFilmesComponent implements OnInit, OnChanges {
         this._moviesService.getDesiredMovie(this.filmeBuscado)
           .subscribe(data=> {
             this.objeto = data;
-            this.isLoaded = true;
+          }, error=>{
+            alert(error);
           })
       }
     }
